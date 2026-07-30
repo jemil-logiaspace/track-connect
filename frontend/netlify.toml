@@ -3,7 +3,8 @@
   publish = "dist"
 
 [build.environment]
-  SECRETS_SCAN_OMIT_KEYS = "VITE_API_URL,VITE_SOCKET_URL,VITE_LOVABLE_CONNECTOR_LOGO_DEV_API_KEY"
+  VITE_API_URL = "https://track-connect-api-kd00.onrender.com/api"
+  VITE_SOCKET_URL = "https://track-connect-api-kd00.onrender.com"
 
 [[redirects]]
   from = "/*"
