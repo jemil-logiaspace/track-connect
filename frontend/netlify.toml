@@ -5,6 +5,7 @@
 [build.environment]
   VITE_API_URL = "https://track-connect-api-kd00.onrender.com/api"
   VITE_SOCKET_URL = "https://track-connect-api-kd00.onrender.com"
+  VITE_LOVABLE_CONNECTOR_LOGO_DEV_API_KEY = "pk_S7218L0sQ8mTaNfalSEDRQ"
 
 [[redirects]]
   from = "/*"
