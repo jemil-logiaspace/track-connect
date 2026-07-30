@@ -240,7 +240,7 @@ const LandingPage = () => {
                             {(result.originAddress || "Origin")} → {(result.destinationAddress || "Destination")}
                           </div>
                           <button
-                            onClick={() => navigate(`/track/${result.id}`)}
+                            onClick={() => navigate(`/track/${result.trackingNumber}`)}
                             className="rounded-full text-sm font-medium bg-gray-900 text-white inline-flex items-center pl-6 pr-1 py-1 gap-3 transition-all duration-700 ease-out-expo hover:bg-gray-800 active:scale-[0.97] w-full justify-between"
                           >
                             <span>View detailed tracking</span>
