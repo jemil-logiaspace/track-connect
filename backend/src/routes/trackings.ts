@@ -116,10 +116,10 @@ router.post("/", auth, requireRole("admin"), async (req: Request, res: Response)
   } = parsed.data;
 
   const originGeo = await geocodeAddress(originAddress);
-  if (!originGeo) throw badRequest("Could not geocode origin address");
+  if (!originGeo) throw badRequest(`Could not geocode origin address: "${originAddress}"`);
 
   const destGeo = await geocodeAddress(destinationAddress);
-  if (!destGeo) throw badRequest("Could not geocode destination address");
+  if (!destGeo) throw badRequest(`Could not geocode destination address: "${destinationAddress}"`);
 
   const speed = avgSpeedKmh || 60;
   const { eta } = await calculateEta(
