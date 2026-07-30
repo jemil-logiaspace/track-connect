@@ -1,4 +1,4 @@
-import client from "./client";
+import client, { publicClient } from "./client";
 
 export interface LoginResponse {
   token: string;
@@ -33,4 +33,12 @@ export async function register(
 export async function getMe(): Promise<LoginResponse["user"]> {
   const { data } = await client.get<LoginResponse["user"]>("/auth/me");
   return data;
+}
+
+export async function forgotPassword(email: string): Promise<void> {
+  await publicClient.post("/auth/forgot-password", { email });
+}
+
+export async function resetPassword(token: string, password: string): Promise<void> {
+  await publicClient.post("/auth/reset-password", { token, password });
 }

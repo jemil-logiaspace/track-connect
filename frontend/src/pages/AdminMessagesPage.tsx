@@ -54,7 +54,7 @@ export default function AdminMessagesPage() {
   const resolveMutation = useMutation({
     mutationFn: async () => {
       if (!openDispute) return;
-      await resolveDispute(openDispute.id, resolveResponse);
+      await resolveDispute(selectedConv!.trackingId, openDispute.id, resolveResponse);
       await sendMessage(selectedId!, `✅ Dispute resolved: ${resolveResponse}`);
     },
     onSuccess: () => {

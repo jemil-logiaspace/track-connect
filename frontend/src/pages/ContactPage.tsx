@@ -3,7 +3,7 @@ import Navbar from "@/components/layout/Navbar";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
-import client from "@/api/client";
+import { submitContact } from "@/api/contact";
 import { getSettings } from "@/api/settings";
 
 const fadeUp = {
@@ -29,7 +29,7 @@ const ContactPage = () => {
     e.preventDefault();
     setSending(true);
     try {
-      await client.post("/contact", form);
+      await submitContact(form);
       toast.success("Message sent — we'll get back to you within 24h.");
       setForm({ name: "", email: "", company: "", subject: "", message: "" });
     } catch {

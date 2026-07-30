@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
-import client from "@/api/client";
+import { forgotPassword } from "@/api/auth";
 
 const ForgotPasswordPage = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +12,7 @@ const ForgotPasswordPage = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await client.post("/auth/forgot-password", { email });
+      await forgotPassword(email);
       setSent(true);
     } catch {
       setSent(true);

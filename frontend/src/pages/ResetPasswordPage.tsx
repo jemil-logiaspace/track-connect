@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import client from "@/api/client";
+import { resetPassword } from "@/api/auth";
 
 const ResetPasswordPage = () => {
   const { token } = useParams();
@@ -18,7 +18,7 @@ const ResetPasswordPage = () => {
     }
     setLoading(true);
     try {
-      await client.post("/auth/reset-password", { token, password });
+      await resetPassword(token!, password);
       toast.success("Password updated successfully");
       navigate("/login");
     } catch (err: unknown) {

@@ -1,4 +1,4 @@
-import client from "./client";
+import client, { publicClient } from "./client";
 
 export interface Tracking {
   id: string;
@@ -50,7 +50,7 @@ export async function getTracking(id: string): Promise<Tracking> {
 export async function getPublicTracking(
   trackingNumber: string
 ): Promise<Tracking> {
-  const { data } = await client.get<Tracking>(
+  const { data } = await publicClient.get<Tracking>(
     `/trackings/public/${trackingNumber}`
   );
   return data;
