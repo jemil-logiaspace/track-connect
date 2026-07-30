@@ -2,7 +2,7 @@ services:
   - type: web
     name: track-connect-api
     runtime: node
-    repo: https://github.com/anymeru/trackflowz.git
+    repo: https://github.com/jemil-logiaspace/track-connect
     rootDir: backend
     plan: free
     buildCommand: npm install && npx prisma generate && npm run build
