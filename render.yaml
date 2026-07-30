@@ -13,7 +13,7 @@ services:
       - key: JWT_SECRET
         generateValue: true
       - key: CORS_ORIGIN
-        value: https://trackflowz.netlify.app
+        value: https://trackez.netlify.app/
       - key: SMTP_HOST
         value: smtp-relay.brevo.com
       - key: SMTP_PORT
